@@ -1,0 +1,35 @@
+#Haroune Belhachani (2471001)
+services:
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - blogverse-net
+
+  backend:
+    build: ./blogverse-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    env_file: .env
+    networks:
+      - blogverse-net
+
+  frontend:
+    build: ./blogverse-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - blogverse-net
+
+networks:
+  blogverse-net:
+    driver: bridge
