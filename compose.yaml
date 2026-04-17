@@ -12,6 +12,7 @@ services:
       - blogverse-net
 
   backend:
+    restart: always
     build: ./blogverse-backend
     ports:
       - "3000:3000"
@@ -22,6 +23,7 @@ services:
       - blogverse-net
 
   frontend:
+    restart: always
     build: ./blogverse-frontend
     ports:
       - "80:5173"
