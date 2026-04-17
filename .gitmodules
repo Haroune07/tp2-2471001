@@ -1,6 +1,6 @@
-[submodule "blogverse-frontend"]
+[submodule "2471001-blogverse-frontend"]
 	path = blogverse-frontend
 	url = https://github.com/Haroune07/2471001-blogverse-frontend
-[submodule "blogverse-backend"]
+[submodule "2471001-blogverse-backend"]
 	path = blogverse-backend
 	url = https://github.com/Haroune07/2471001-blogverse-backend
